@@ -21,7 +21,25 @@ EOF
     Name = "${local.resource_prefix.value}-ec2"
   }
 }
+resource "aws_s3_bucket" "template_bucket" {
+  bucket        = "local.bucket_name"
+  acl           = "public-read"
+  force_destroy = true
+}
 
+
+resource "aws_s3_bucket" "template_bucket" {
+  bucket        = "local.bucket_name"
+  acl           = "public-read"
+  force_destroy = true
+}
+
+
+resource "aws_s3_bucket" "template_bucket" {
+  bucket        = "local.bucket_name"
+  acl           = "public-read"
+  force_destroy = true
+}
 resource "aws_ebs_volume" "web_host_storage" {
   # unencrypted volume
   availability_zone = "${var.availability_zone}"
